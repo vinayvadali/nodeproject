@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div class="taskForm">
+            <form action="">
+                <table cellspacing="5px" cellpadding="2px">
+                    <tr>
+                        <td>
+                            <label for="taskName">Enter Task Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="taskName" placeholder="TaskName">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="taskName">Task Description:</label>
+                        </td>
+                        <td>
+                            <textarea name="description" id="description" cols="40" rows="5"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Priority
+                        </td>
+                        <td>
+                            <input type="radio" name="priority" id="high" value="high">
+                            <label for="high">High</label>
+                            <input type="radio" name="priority" id="medium" value="medium">
+                            <label for="medium">Medium</label>
+                            <input type="radio" name="priority" id="low" value="low">
+                            <label for="low">Low</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="dueDate">Due Date</label>
+                        </td>
+
+                        <td>
+                            <input type="date" name="dueDate" id="dueDate">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="taskDisplay">
+            <ul id="tasks">
+                
+            </ul>
+
+        </div>
+    </main>
+     
+</body>
+</html>
