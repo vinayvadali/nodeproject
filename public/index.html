@@ -3,63 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <main>
-        <div class="taskForm">
-            <form action="">
-                <table cellspacing="5px" cellpadding="2px">
-                    <tr>
-                        <td>
-                            <label for="taskName">Enter Task Name:</label>
-                        </td>
-                        <td>
-                            <input type="text" name="taskName" placeholder="TaskName">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="taskName">Task Description:</label>
-                        </td>
-                        <td>
-                            <textarea name="description" id="description" cols="40" rows="5"></textarea>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            Priority
-                        </td>
-                        <td>
-                            <input type="radio" name="priority" id="high" value="high">
-                            <label for="high">High</label>
-                            <input type="radio" name="priority" id="medium" value="medium">
-                            <label for="medium">Medium</label>
-                            <input type="radio" name="priority" id="low" value="low">
-                            <label for="low">Low</label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="dueDate">Due Date</label>
-                        </td>
-
-                        <td>
-                            <input type="date" name="dueDate" id="dueDate">
-                        </td>
-                    </tr>
-                </table>
-            </form>
+    <div class="container">
+        <div class ="row justify-content-center">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group row">
+                              <label for="taskName" class="col-sm-3 col-form-label">Task Name</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="taskName">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Task Description</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="dueDate" >Due Date</label>
+                                <input type="date" name="dueDate" class="form-control col-form-label col-sm-4" id="dueDate">
+                              </div>
+                            <fieldset class="form-group">
+                              <div class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
+                                <div class="col-sm-10">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="low" value="option1" checked>
+                                    <label class="form-check-label" for="low">
+                                      Low
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="medium" value="option2">
+                                    <label class="form-check-label" for="medium">
+                                      Medium
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="high" value="option3">
+                                    <label class="form-check-label" for="high">
+                                      High
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset>
+                            <div class="form-group row">
+                              <div class="col-sm-10">
+                                <button type="submit" class="btn btn-primary">Add Task</button>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                  </div>
+              </div>
         </div>
-        <div id="taskDisplay">
-            <ul id="tasks">
-                
-            </ul>
 
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <div class="card " style="margin-top: 2%;">
+                    <div class="card-body">
+                        <h5 class="card-title">Tasks</h5>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-     
+      
 </body>
 </html>
+
+            
