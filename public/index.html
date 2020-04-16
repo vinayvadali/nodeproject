@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div class="container">
         <div class ="row justify-content-center">
-            <div class="col-sm-6">
-                <div class="card">
+            <div class="col-sm-7">
+                <div class="card" style="margin-top: 5px;">
                     <div class="card-body">
                         <form>
                             <div class="form-group row">
@@ -21,7 +25,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Task Description</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" id="taskDescription" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="dueDate" >Due Date</label>
@@ -32,19 +36,19 @@
                                 <legend class="col-form-label col-sm-2 pt-0">Priority</legend>
                                 <div class="col-sm-10">
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="low" value="option1" checked>
+                                    <input class="form-check-input" type="radio" name="priority" id="low" value="3" checked>
                                     <label class="form-check-label" for="low">
                                       Low
                                     </label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="medium" value="option2">
+                                    <input class="form-check-input" type="radio" name="priority" id="medium" value="2">
                                     <label class="form-check-label" for="medium">
                                       Medium
                                     </label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" id="high" value="option3">
+                                    <input class="form-check-input" type="radio" name="priority" id="high" value="1">
                                     <label class="form-check-label" for="high">
                                       High
                                     </label>
@@ -54,7 +58,7 @@
                             </fieldset>
                             <div class="form-group row">
                               <div class="col-sm-10">
-                                <button type="submit" class="btn btn-primary">Add Task</button>
+                                <button type="submit" class="btn btn-primary" id="addTask">Add Task</button>
                               </div>
                             </div>
                           </form>
@@ -62,17 +66,38 @@
                   </div>
               </div>
         </div>
-
+        <p id="console"></p>
         <div class="row justify-content-center">
-            <div class="col-sm-6">
+            <div class="col-sm-7">
                 <div class="card " style="margin-top: 2%;">
-                    <div class="card-body">
-                        <h5 class="card-title">Tasks</h5>
+                  <div class="card-header">
+                    <div class="card-title row">
+                      <div class="col">
+                        <h5>Tasks</h5>
+                      </div>
+                      <div class="col">
+                        <select id="sortMenu">
+                          <option selected>Sort By</option>
+                          <option value="1">Due Date (Ascending)</option>
+                          <option value="2">Due Date (Descending)</option>
+                          <option value="3">Priority (High to Low)</option>
+                          <option value="4">Priority (Low to High)</option>
+                          <option value="5">Status(Incomplete First)</option>
+                        </select>
+                      </div>
                     </div>
+                  </div>
+                  <div class="card-body">
+                    <ul id="taskHolder" class="list-group">
+
+                    </ul>
+                    <br>
+                    <button type="submit" class="btn btn-primary" onclick="updateStatus()">Completed</button>  
+                  </div>
                 </div>
             </div>
         </div>
-      
+    </div>
 </body>
 </html>
 
