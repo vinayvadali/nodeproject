@@ -2,6 +2,7 @@ window.addEventListener('load', loadTasks)
 let i=0
 let id=0
 function loadTasks() {
+  setToTomorrowsDate()
   let taskHolder = document.getElementById('taskHolder')
   taskHolder.innerHTML=""
   getTodos()
@@ -133,6 +134,11 @@ function loadTasks() {
     sortMenu(parseInt(document.getElementById('sortMenu').value),taskHolder)
   }
   
+  function setToTomorrowsDate(){
+    var currentDate = new Date()
+    currentDate.setDate(currentDate.getDate() + 1)
+    document.getElementById('dueDate').value= currentDate.toISOString().substr(0,10);
+    }
    
   
 }
